@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Shelby Park Map</title>
+<link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="https://js.arcgis.com/4.30/esri/themes/light/main.css" />
+<script src="https://js.arcgis.com/4.30/"></script>
+</head>
+
+<body>
+<div id="viewDiv">
+  <div id="gifOverlay"> <img src="assets/maybe/sprayground.gif" id="theGif"> </div>
+</div>
+<div id="eyesContainer">
+  <div class="eye">
+    <div class="pupil"></div>
+  </div>
+  <div class="eye">
+    <div class="pupil"></div>
+  </div>
+</div>
+<img src="assets/icons/flowerstem.png" id="flowerStem">
+<div id="zoomControls">
+  <div class="zoom-label">Zoom!</div>
+  <div class="zoom-button-row">
+    <button id="zoom18" class="zoom-btn">1</button>
+    <button id="zoom19" class="zoom-btn">2</button>
+  </div>
+</div>
+<div id="homeControls">
+  <div class="zoom-button-row">
+    <button id="homeBtn" class="zoom-btn home-btn">I'm Lost!</button>
+  </div>
+</div>
+<div id="titlePanel"> <img src="assets/icons/shelbytitle.png" id="titleImage"> </div>
+
+<!-- IMPORTANT: keep this at the end --> 
+<script src="main.js?v=3"></script>
+</body>
+</html>

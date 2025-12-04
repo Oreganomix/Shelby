@@ -1,0 +1,207 @@
+:root {
+  --lightGreen: #c0d470;
+  --middleGreen: #94c263;
+  --darkGreen: #78a158;
+  --darkestGreen: #67835c;
+  --lightBrown: #dcb98a;
+  --middleBrown: #c49a6c;
+  --darkBrown: #aa7959;
+  --darkestBrown: #90625d;
+  --lightGrey: #c1c8b9;
+  --middleGrey: #9da89a;
+  --darkGrey: #818b83;
+  --darkestGrey: #549059;
+  --accentOrange: #e58b52;
+  --accentBrown: #7e3b1d;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: "Inter", sans-serif;
+  background-color: #f8f5e7;
+}
+
+#viewDiv {
+  height: 100%;
+  width: 100%;
+}
+#zoomControls {
+  position: absolute;
+  top: 225px;
+  left: 20px;
+  z-index: 10;
+  padding: 10px 12px;
+  background-color: #dcb98a; /* medium brown */
+  border: 3px solid #b68962; /* deep brown */
+  border-radius: 10px;
+  box-shadow: -3px 5px 0 #9f7365;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  image-rendering: pixelated;
+  transform: scale(1.3);
+  transform-origin: top left;
+}
+.zoom-label {
+  font-size: 25px;
+  font-weight: 800;
+  text-align: center;
+  text-transform: none;
+  letter-spacing: 1px;
+  color: #9f7365;
+  text-shadow: 2px 2px #e8cfa6;
+}
+/* Button row */
+.zoom-button-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+/* Round 3D buttons */
+.zoom-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 3px solid #f3e5c2;
+  background-color: #e8cfa6;
+  box-shadow:
+    0 0 0 1px #c49b71, -2px 4px 1px #b68962;
+  cursor: pointer;
+  padding: 0;
+  font-size: 16px;
+  font-weight: 800;
+  color: #b68962;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  image-rendering: pixelated;
+}
+.zoom-btn:hover {
+  background-color: #f3d9b5;
+}
+.zoom-btn:active {
+  transform: translateY(2px);
+  background-color: #b68962 !important;
+  box-shadow:
+    0 0 0 2px #b68962, 0 1px 0 #b68962;
+}
+.zoom-btn.active {
+  color: #78a158 !important;
+}
+.zoom-btn.active, .zoom-btn.active:hover {
+  color: #a4c263 !important;
+}
+#gifOverlay {
+  position: absolute;
+  pointer-events: none;
+  z-index: 50;
+}
+#gifOverlay img {
+  width: 90px;
+  height: auto;
+}
+#homeControls {
+  position: absolute;
+  top: 400px;
+  left: 20px;
+  z-index: 10;
+  padding: 10px 12px;
+  background-color: #dcb98a;
+  border: 3px solid #b68962;
+  border-radius: 10px;
+  box-shadow: -3px 5px 0 #9f7365;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  image-rendering: pixelated;
+  transform: scale(1.3);
+  transform-origin: top left;
+}
+.home-btn {
+  width: 80px;
+  height: 80px;
+  border-radius: 60%;
+  padding: 0;
+  background-color: #bd7575;
+  border: 3px solid #8A4F4F;
+  color: #e0ad9e;
+  text-shadow: 2px 2px #965270;
+  box-shadow: -3px 5px 1px #b68962;
+  transition: all 0.1s ease;
+}
+.home-btn:hover {
+  background-color: #D48A8A;
+  border-color: #9E5A5A;
+  box-shadow: -3px 5px 0 #c49a6c;
+}
+.home-btn:active {
+  background-color: #965270 !important;
+  box-shadow: -2px 3px 0 #c49a6c;
+  transform: translate(-1px, 2px);
+}
+#titlePanel {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  transform: scale(0.6);
+  transform-origin: top left;
+  z-index: 20;
+  padding: 8px 12px;
+  background-color: var(--lightBrown);
+  border: 7px solid var(--middleBrown);
+  border-radius: 10px;
+  box-shadow: -10px 10px 0 var(--darkBrown);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 100px;
+  min-height: 70px;
+}
+#titleImage {
+  max-width: 900px;
+  max-height: auto;
+  object-fit: contain;
+  display: block;
+}
+#eyesContainer {
+  position: absolute;
+  top: 700px;
+  left: 170px;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: none;
+  z-index: 80;
+}
+#eyesContainer .eye {
+  width: 70px;
+  height: 60px;
+  border-radius: 50%;
+  background: #fdfdf8;
+  border: 3px solid #2a241f;
+  box-shadow: -2px 3px 0 #6b3838;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+#eyesContainer .pupil {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #3b1e1e;
+  transform: translate(0, 0);
+  transition: transform 0.03s linear;
+}
+#flowerStem {
+  position: absolute;
+  bottom: 40px;
+  left: 20px;
+  width: auto;
+  height: 650px;
+  z-index: 50;
+}
